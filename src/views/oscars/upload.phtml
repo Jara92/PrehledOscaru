@@ -1,0 +1,75 @@
+<div class="container">
+    <h1 class="mt-3">Výsledky</h1>
+
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs my-3">
+        <li class="nav-item">
+            <a class="nav-link active" data-bs-toggle="tab" href="#year">Přehled oscarů dle roku</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#movies">Přehled filmů, které obdržely oscary za mužskou i ženskou hlavní roli</a>
+        </li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <div class="tab-pane container active" id="year">
+            <h2 class="my-2">Přehled oscarů dle roku</h2>
+
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">Rok</th>
+                    <th scope="col">Ženy</th>
+                    <th scope="col">Muži</th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php foreach ($byYear as $year => $i): ?>
+                    <tr>
+                        <td><?= printSave($year) ?></td>
+                        <td>
+                            <?= printSave($i->female->getActor()->getName()) ?> (<?= printSave($i->female->getActor()->getAge()) ?>)
+                            <br />
+                            <small><?= printSave($i->female->getMovie()->getName()) ?></small>
+                        </td>
+                        <td>
+                            <?= printSave($i->male->getActor()->getName()) ?> (<?= printSave($i->male->getActor()->getAge()) ?>)
+                            <br />
+                            <small><?= printSave($i->male->getMovie()->getName()) ?></small>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
+        <div class="tab-pane container fade" id="movies">
+            <h2 class="my-2">Přehled filmů, které obdržely oscary za mužskou i ženskou hlavní roli</h2>
+
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">Název filmu</th>
+                    <th scope="col">Rok</th>
+                    <th scope="col">Herečka</th>
+                    <th scope="col">Herec</th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php foreach ($moviesWhereBothGendersWon as $year => $i): ?>
+                    <tr>
+                        <td><?= printSave($i->male->getMovie()->getName()) ?></td>
+                        <td><?= printSave($year) ?></td>
+                        <td>
+                            <?= printSave($i->female->getActor()->getName()) ?> (<?= printSave($i->female->getActor()->getAge())?>)
+                        </td>
+                        <td>
+                            <?= printSave($i->male->getActor()->getName()) ?> (<?= printSave($i->male->getActor()->getAge()) ?>)
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

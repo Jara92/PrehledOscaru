@@ -1,6 +1,7 @@
 <?php
 
 require '../vendor/autoload.php';
+require '../src/ViewFunctions.php';
 
 use Src\Router;
 
