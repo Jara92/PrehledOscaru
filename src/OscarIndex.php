@@ -2,7 +2,7 @@
 
 namespace Src;
 
-use Src\models\Oscar;
+use Src\Models\Oscar;
 
 /**
  * Dummy class to hold Oscar winners.

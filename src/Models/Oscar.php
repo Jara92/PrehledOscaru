@@ -1,6 +1,6 @@
 <?php
 
-namespace Src\models;
+namespace Src\Models;
 
 /**
  * Oscar model.

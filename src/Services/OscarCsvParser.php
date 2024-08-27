@@ -1,10 +1,10 @@
 <?php
 
-namespace Src\services;
+namespace Src\Services;
 
-use Src\models\Actor;
-use Src\models\Movie;
-use Src\models\Oscar;
+use Src\Models\Actor;
+use Src\Models\Movie;
+use Src\Models\Oscar;
 
 class OscarCsvParser
 {

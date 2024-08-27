@@ -1,8 +1,8 @@
 <?php
 
-namespace Src\services;
+namespace Src\Services;
 
-use Src\models\Oscar;
+use Src\Models\Oscar;
 use Src\OscarIndex;
 
 class OscarService

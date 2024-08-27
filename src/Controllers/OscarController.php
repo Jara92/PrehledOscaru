@@ -3,8 +3,8 @@
 namespace Src\Controllers;
 
 use Src\ActionResult;
-use Src\services\OscarCsvParser;
-use Src\services\OscarService;
+use Src\Services\OscarCsvParser;
+use Src\Services\OscarService;
 
 
 /**
